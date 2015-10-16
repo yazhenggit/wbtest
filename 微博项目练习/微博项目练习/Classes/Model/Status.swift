@@ -41,7 +41,8 @@ class Status: NSObject {
     
     /// 配图的URL的数组
     var pictureURLs: [NSURL]?
-    
+//    返回的行高
+    var rowHight:CGFloat?
 
     /// 用户
     var user: User?
