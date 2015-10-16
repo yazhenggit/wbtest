@@ -10,11 +10,12 @@ import UIKit
 
 class BaseTableViewController: UITableViewController,visitorLogViewDelegate {
 
-    var userLogon = false
+    var userLogin = UserAccount.userLogon
+//    var userLogon =
     var visitorView: visitorLogView?
     
     override func loadView() {
-        userLogon ? super.loadView() : setupVisitorView()
+        userLogin ? super.loadView() : setupVisitorView()
     }
     private func setupVisitorView(){
         
@@ -22,13 +23,15 @@ class BaseTableViewController: UITableViewController,visitorLogViewDelegate {
         visitorView?.delegate = self
         view = visitorView
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillLogin")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillRegister")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillLogin")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillRegister")
         
     }
     
     func visitorLoginViewWillLogin() {
-        print("登录")
+     
+        let nav = UINavigationController(rootViewController: OAuthViewController())
+        presentViewController(nav, animated: true, completion: nil)
     }
     func visitorLoginViewWillRegister() {
         print("注册")
