@@ -27,25 +27,34 @@ class Status: NSObject {
             }
             
             // 实例化数组
-            pictureURLs = [NSURL]()
+            storedPictureURLs = [NSURL]()
             
             // 遍历字典生成 url 的数组
             for dict in pic_urls! {
                 if let urlString = dict["thumbnail_pic"] as? String {
-                    pictureURLs?.append(NSURL(string: urlString)!)
+                    storedPictureURLs?.append(NSURL(string: urlString)!)
                 }
             }
         }
 
     }
     
+    // `保存`配图的 URL 的数组
+    private var storedPictureURLs: [NSURL]?
     /// 配图的URL的数组
-    var pictureURLs: [NSURL]?
-//    返回的行高
+    var pictureURLs: [NSURL]?  {
+        return retweeted_status == nil ? storedPictureURLs : retweeted_status?.storedPictureURLs
+    }
+
+    
+    //    返回的行高
     var rowHight:CGFloat?
 
     /// 用户
     var user: User?
+    
+    //  转发微博
+    var retweeted_status:Status?
     
     /// 加载微博数据 - 返回`微博`数据的数组
     class func loadStatus(finished: (dataList: [Status]?, error: NSError?) -> ()) {
@@ -90,6 +99,13 @@ class Status: NSObject {
             if let dict = value as? [String: AnyObject] {
                 // 创建用户数据
                 user = User(dict: dict)
+            }
+            return
+        }
+        if key == "retweeted_status" {
+            if let dict = value as? [String: AnyObject] {
+                // 创建转发微博数据
+                retweeted_status = Status(dict: dict)
             }
             return
         }

@@ -35,7 +35,7 @@ class HomeTableViewController: BaseTableViewController {
     /// 准备表格视图
     private func prepareTableView() {
         // 注册原型 cell
-        tableView.registerClass(StatusCell.self, forCellReuseIdentifier: "Cell")
+        tableView.registerClass(StatusForwardCell.self, forCellReuseIdentifier: "Cell")
 //        // 设置表格的预估行高(方便表格提前计算预估行高，提高性能)
 //        tableView.estimatedRowHeight = 600
 //        // 设置表格自动计算行高
@@ -61,7 +61,7 @@ class HomeTableViewController: BaseTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? StatusCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as? StatusForwardCell
         
         cell!.status = statuses![indexPath.row]
         

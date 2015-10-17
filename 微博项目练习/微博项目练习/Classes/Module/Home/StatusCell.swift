@@ -22,12 +22,13 @@ class StatusCell: UITableViewCell {
             // 设置配图视图的尺寸
             pictureHightCons?.constant = pictureView.bounds.size.height
             pictureWidthCons?.constant = pictureView.bounds.size.width
+            pictureTopCons?.constant = (pictureView.bounds.size.height == 0) ? 0 : statusCellControlMargin
         }
     }
     
     var pictureWidthCons:NSLayoutConstraint?
     var pictureHightCons:NSLayoutConstraint?
-    
+    var pictureTopCons: NSLayoutConstraint?
     func rowHeight(status: Status) -> CGFloat {
         // 设置属性
         self.status = status
@@ -49,7 +50,7 @@ class StatusCell: UITableViewCell {
     }
     
     /// 设置界面
-    private func setupUI() {
+     func setupUI() {
         // 1. 添加控件
         contentView.addSubview(topView)
         contentView.addSubview(contentLabel)
@@ -64,10 +65,10 @@ class StatusCell: UITableViewCell {
         contentLabel.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: statusCellControlMargin, y: statusCellControlMargin))
         // 宽度
         contentView.addConstraint(NSLayoutConstraint(item: contentLabel, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant: -2 * statusCellControlMargin))
-        //3》 配图视图
-        let cons =  pictureView.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: contentLabel, size: CGSize(width: 290, height: 290), offset: CGPoint(x: 0, y: statusCellControlMargin))
-        pictureWidthCons = pictureView.ff_Constraint(cons, attribute: NSLayoutAttribute.Width)
-        pictureHightCons = pictureView.ff_Constraint(cons, attribute: NSLayoutAttribute.Height)
+//        //3》 配图视图
+//        let cons =  pictureView.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: contentLabel, size: CGSize(width: 290, height: 290), offset: CGPoint(x: 0, y: statusCellControlMargin))
+//        pictureWidthCons = pictureView.ff_Constraint(cons, attribute: NSLayoutAttribute.Width)
+//        pictureHightCons = pictureView.ff_Constraint(cons, attribute: NSLayoutAttribute.Height)
         // 4> 底部视图
         bottomView.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: UIScreen.mainScreen().bounds.width, height: 44), offset: CGPoint(x: -statusCellControlMargin, y: statusCellControlMargin))
 //        // 底部约束
@@ -78,15 +79,15 @@ class StatusCell: UITableViewCell {
     /// 顶部视图
     private lazy var topView: StatusTopView = StatusTopView()
     /// 内容标签
-    private lazy var contentLabel: UILabel = {
+     lazy var contentLabel: UILabel = {
         let label = UILabel(color: UIColor.darkGrayColor(), fontSize: 15)
         label.numberOfLines = 0
         
         return label
     }()
 //    配图视图
-    private var pictureView: StatusPictureView = StatusPictureView()
+     var pictureView: StatusPictureView = StatusPictureView()
     /// 底部视图
-    private lazy var bottomView: StatusBottomView = StatusBottomView()
+     lazy var bottomView: StatusBottomView = StatusBottomView()
     
 }
