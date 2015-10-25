@@ -28,17 +28,24 @@ class Status: NSObject {
             
             // 实例化数组
             storedPictureURLs = [NSURL]()
-            
+            storedLargePictureURLs = [NSURL]()
             // 遍历字典生成 url 的数组
             for dict in pic_urls! {
                 if let urlString = dict["thumbnail_pic"] as? String {
                     storedPictureURLs?.append(NSURL(string: urlString)!)
+                    let largeURLstring = urlString.stringByReplacingOccurrencesOfString("thumbnail", withString: "large")
+                    storedLargePictureURLs?.append(NSURL(string: largeURLstring)!)
                 }
             }
         }
 
     }
     
+    //    保存大图
+    private var storedLargePictureURLs:[NSURL]?
+    var picturelargeURLs:[NSURL] {
+        return retweeted_status == nil ? storedLargePictureURLs! : (retweeted_status?.storedLargePictureURLs)!
+    }
     // `保存`配图的 URL 的数组
     private var storedPictureURLs: [NSURL]?
     /// 配图的URL的数组
@@ -57,9 +64,9 @@ class Status: NSObject {
     var retweeted_status:Status?
     
     /// 加载微博数据 - 返回`微博`数据的数组
-    class func loadStatus(finished: (dataList: [Status]?, error: NSError?) -> ()) {
+    class func loadStatus(since_id: Int, max_id: Int,finished: (dataList: [Status]?, error: NSError?) -> ()) {
         
-        NetworkTools.sharedTools.loadStatuses() { (result, error) -> () in
+        NetworkTools.sharedTools.loadStatuses(since_id, max_id: max_id) { (result, error) -> () in
             
             if error != nil {
                 finished(dataList: nil, error: error)

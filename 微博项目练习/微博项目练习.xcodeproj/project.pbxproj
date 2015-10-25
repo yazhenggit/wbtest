@@ -17,6 +17,7 @@
 		2450B2311BC6562800E8416F /* visitorLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450B2301BC6562800E8416F /* visitorLogView.swift */; settings = {ASSET_TAGS = (); }; };
 		245612D71BCFC62D000E185C /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245612D61BCFC62D000E185C /* StatusPictureView.swift */; settings = {ASSET_TAGS = (); }; };
 		245612DB1BD11F06000E185C /* StatusForwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245612DA1BD11F06000E185C /* StatusForwardCell.swift */; settings = {ASSET_TAGS = (); }; };
+		245612DD1BD22AAA000E185C /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245612DC1BD22AAA000E185C /* StatusNormalCell.swift */; settings = {ASSET_TAGS = (); }; };
 		2460B94B1BC817A000C944CA /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460B94A1BC817A000C944CA /* NetworkTools.swift */; settings = {ASSET_TAGS = (); }; };
 		2460B94E1BC92D3E00C944CA /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2460B94D1BC92D3E00C944CA /* OAuthViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2460B9501BC931FC00C944CA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2460B94F1BC931FC00C944CA /* Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -32,6 +33,11 @@
 		2469CECE1BCEB0AD00BE24F9 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2469CECD1BCEB0AD00BE24F9 /* UIButton+Extension.swift */; settings = {ASSET_TAGS = (); }; };
 		247725B51BC55EEE00E37DD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247725B41BC55EEE00E37DD2 /* AppDelegate.swift */; };
 		247725BC1BC55EEE00E37DD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247725BB1BC55EEE00E37DD2 /* Assets.xcassets */; };
+		248C7E681BD8DDB100D11B83 /* YZRefresh.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248C7E661BD8DDB100D11B83 /* YZRefresh.xib */; settings = {ASSET_TAGS = (); }; };
+		248C7E691BD8DDB100D11B83 /* YZRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248C7E671BD8DDB100D11B83 /* YZRefreshControl.swift */; settings = {ASSET_TAGS = (); }; };
+		248C7E6C1BD8DDFC00D11B83 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248C7E6B1BD8DDFC00D11B83 /* PhotoBrowserViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		248C7E6E1BD9240000D11B83 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248C7E6D1BD9240000D11B83 /* UIColor + Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		248C7E701BD9250800D11B83 /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248C7E6F1BD9250800D11B83 /* PhotoBrowserCell.swift */; settings = {ASSET_TAGS = (); }; };
 		24F741BB1BCD0B53006583FF /* NewFeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F741BA1BCD0B53006583FF /* NewFeatureCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -45,6 +51,7 @@
 		2450B2301BC6562800E8416F /* visitorLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = visitorLogView.swift; sourceTree = "<group>"; };
 		245612D61BCFC62D000E185C /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		245612DA1BD11F06000E185C /* StatusForwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusForwardCell.swift; sourceTree = "<group>"; };
+		245612DC1BD22AAA000E185C /* StatusNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
 		2460B94A1BC817A000C944CA /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		2460B94D1BC92D3E00C944CA /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		2460B94F1BC931FC00C944CA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +68,11 @@
 		247725B11BC55EEE00E37DD2 /* 微博项目练习.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微博项目练习.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		247725B41BC55EEE00E37DD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247725BB1BC55EEE00E37DD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		248C7E661BD8DDB100D11B83 /* YZRefresh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZRefresh.xib; sourceTree = "<group>"; };
+		248C7E671BD8DDB100D11B83 /* YZRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZRefreshControl.swift; sourceTree = "<group>"; };
+		248C7E6B1BD8DDFC00D11B83 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoBrowserViewController.swift; path = PhotoBrowser/PhotoBrowserViewController.swift; sourceTree = "<group>"; };
+		248C7E6D1BD9240000D11B83 /* UIColor + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		248C7E6F1BD9250800D11B83 /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
 		24F741BA1BCD0B53006583FF /* NewFeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		397537823F6D450EDFBC7930 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F10BED0D17C304D12BEC32E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +147,9 @@
 		243477831BC5628200F1AE5C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				248C7E6A1BD8DDBF00D11B83 /* PhotoBrowser */,
+				248C7E6B1BD8DDFC00D11B83 /* PhotoBrowserViewController.swift */,
+				248C7E651BD8DDB100D11B83 /* Refresh */,
 				2469CEC41BCEAD2700BE24F9 /* StatusCell */,
 				2434778A1BC5641400F1AE5C /* HomeTableViewController.swift */,
 			);
@@ -144,8 +159,8 @@
 		243477841BC5628200F1AE5C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				243477881BC5638B00F1AE5C /* Main.swift */,
 				2450B22E1BC617EB00E8416F /* BaseTableViewController.swift */,
+				243477881BC5638B00F1AE5C /* Main.swift */,
 				2450B2301BC6562800E8416F /* visitorLogView.swift */,
 			);
 			path = Main;
@@ -174,6 +189,7 @@
 				2469CECD1BCEB0AD00BE24F9 /* UIButton+Extension.swift */,
 				2469CEBC1BCE995800BE24F9 /* UIView+AutoLayout.swift */,
 				2469CECB1BCEB05D00BE24F9 /* UILabel+Extension.swift */,
+				248C7E6D1BD9240000D11B83 /* UIColor + Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -190,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				2469CEC51BCEAD4500BE24F9 /* StatusCell.swift */,
+				245612DC1BD22AAA000E185C /* StatusNormalCell.swift */,
 				245612DA1BD11F06000E185C /* StatusForwardCell.swift */,
 				2469CEC61BCEAD4500BE24F9 /* StatusTopView.swift */,
 				2469CEC71BCEAD4500BE24F9 /* StatusBottomView.swift */,
@@ -225,6 +242,23 @@
 				2460B94F1BC931FC00C944CA /* Info.plist */,
 			);
 			path = "微博项目练习";
+			sourceTree = "<group>";
+		};
+		248C7E651BD8DDB100D11B83 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				248C7E661BD8DDB100D11B83 /* YZRefresh.xib */,
+				248C7E671BD8DDB100D11B83 /* YZRefreshControl.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
+		248C7E6A1BD8DDBF00D11B83 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				248C7E6F1BD9250800D11B83 /* PhotoBrowserCell.swift */,
+			);
+			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
 		24F741B91BCD0B1F006583FF /* NewFeature */ = {
@@ -305,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2460B9501BC931FC00C944CA /* Info.plist in Resources */,
+				248C7E681BD8DDB100D11B83 /* YZRefresh.xib in Resources */,
 				247725BC1BC55EEE00E37DD2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,12 +399,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248C7E6C1BD8DDFC00D11B83 /* PhotoBrowserViewController.swift in Sources */,
 				243477911BC5648A00F1AE5C /* ProfileTableViewController.swift in Sources */,
 				2434778B1BC5641400F1AE5C /* HomeTableViewController.swift in Sources */,
 				245612DB1BD11F06000E185C /* StatusForwardCell.swift in Sources */,
 				243477891BC5638B00F1AE5C /* Main.swift in Sources */,
 				2469CEBD1BCE995800BE24F9 /* UIView+AutoLayout.swift in Sources */,
 				2469CEC81BCEAD4500BE24F9 /* StatusCell.swift in Sources */,
+				248C7E701BD9250800D11B83 /* PhotoBrowserCell.swift in Sources */,
 				2469CEC11BCEA7E700BE24F9 /* User.swift in Sources */,
 				2469CEC91BCEAD4500BE24F9 /* StatusTopView.swift in Sources */,
 				2469CECA1BCEAD4500BE24F9 /* StatusBottomView.swift in Sources */,
@@ -381,11 +418,14 @@
 				245612D71BCFC62D000E185C /* StatusPictureView.swift in Sources */,
 				2460B94E1BC92D3E00C944CA /* OAuthViewController.swift in Sources */,
 				2450B2311BC6562800E8416F /* visitorLogView.swift in Sources */,
+				248C7E6E1BD9240000D11B83 /* UIColor + Extension.swift in Sources */,
 				2460B94B1BC817A000C944CA /* NetworkTools.swift in Sources */,
 				2469CEBF1BCEA72D00BE24F9 /* Status.swift in Sources */,
 				2434778F1BC5647900F1AE5C /* MessageTableViewController.swift in Sources */,
 				2434778D1BC5646700F1AE5C /* DiscoverTableViewController.swift in Sources */,
 				247725B51BC55EEE00E37DD2 /* AppDelegate.swift in Sources */,
+				245612DD1BD22AAA000E185C /* StatusNormalCell.swift in Sources */,
+				248C7E691BD8DDB100D11B83 /* YZRefreshControl.swift in Sources */,
 				2469CECE1BCEB0AD00BE24F9 /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

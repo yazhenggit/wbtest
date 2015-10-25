@@ -8,8 +8,17 @@
 
 import UIKit
 
+let statusCellControlMargin:CGFloat = 8.0
+enum StatusCellIdentifier: String{
+    case NormalCell = "NormalCell"
+    case ForwardCell = "ForwardCell"
+    
+static func cellID(status:Status) -> String {
+    return status.retweeted_status == nil ? StatusCellIdentifier.NormalCell.rawValue :
+            StatusCellIdentifier.ForwardCell.rawValue
+    }
+}
 class StatusCell: UITableViewCell {
-    let statusCellControlMargin:CGFloat = 8.0
     /// 微博数据模型
     var status: Status? {
         didSet {

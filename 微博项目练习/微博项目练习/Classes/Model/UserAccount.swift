@@ -11,7 +11,7 @@ import UIKit
 class UserAccount: NSObject ,NSCoding {
     /// 用户是否登录标记
     class var userLogon: Bool {
-        return loadAccount() != nil
+        return loadAccount != nil
     }
     
     var access_token:String?
@@ -48,26 +48,26 @@ class UserAccount: NSObject ,NSCoding {
         
         self.saveAccount()
         finished(error: nil)
-        print(self)
+//        print(self)
         
         }
     }
 //    定义归档路径
-    private static let accountPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last?.stringByAppendingString("account.plist")
+   static private let accountPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!.stringByAppendingString("account.plist")
 //    保存账号信息
     func saveAccount(){
-    NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.accountPath!)
+    NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.accountPath)
     }
 //    静态用户账户属性
    private static var userAccount: UserAccount?
-    class  func loadAccount() -> UserAccount? {
+    class  var loadAccount: UserAccount? {
         if userAccount == nil {
-        userAccount = NSKeyedUnarchiver.unarchiveObjectWithFile(accountPath!) as?
+        userAccount = NSKeyedUnarchiver.unarchiveObjectWithFile(accountPath) as?
             UserAccount
         }
 //        判断日期
         if let date = userAccount?.expiresDate where date.compare(NSDate()) == NSComparisonResult.OrderedAscending {
-            userAccount == nil
+            userAccount = nil
         }
         return userAccount
     }

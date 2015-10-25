@@ -9,12 +9,13 @@
 import UIKit
 
 class StatusForwardCell: StatusCell {
-    override var status: Status? {
+    override var status:Status? {
         didSet {
             let userName = status?.retweeted_status?.user?.name ?? ""
             let text = status?.retweeted_status?.text ?? ""
-            
-            forwardLabel.text = userName + ":" + text
+    
+            forwardLabel.text = "@" + userName + ":" + text
+    
         }
     }
     // MARK: - 设置 UI
@@ -24,7 +25,7 @@ class StatusForwardCell: StatusCell {
         // 1. 添加控件
         contentView.insertSubview(backButton, belowSubview: pictureView)
         contentView.insertSubview(forwardLabel, aboveSubview: backButton)
-        forwardLabel.text = "dasdfsdf"
+//        forwardLabel.text = "dasdfsdf"
         // 2. 自动布局
         // 1>背景按钮
         backButton.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: contentLabel, size: nil, offset: CGPoint(x: -statusCellControlMargin, y: statusCellControlMargin))
@@ -51,6 +52,7 @@ private lazy var backButton: UIButton = {
 private lazy var forwardLabel: UILabel = {
     let label = UILabel(color: UIColor.darkGrayColor(), fontSize: 14)
     label.numberOfLines = 0
+    label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2*statusCellControlMargin
     
     return label
     }()

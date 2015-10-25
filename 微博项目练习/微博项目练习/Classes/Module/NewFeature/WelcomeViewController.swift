@@ -20,9 +20,10 @@ class WelcomeViewController: UIViewController {
         prepareUI()
         
         // 加载用户头像
-        if let urlString = UserAccount.loadAccount()?.avatar_large {
+        if let urlString = UserAccount.loadAccount?.avatar_large {
             // 更新图像，会自动更新imageView的大小
             iconView.sd_setImageWithURL(NSURL(string: urlString)!)
+            print(urlString)
         }
     }
     override func viewDidAppear(animated: Bool) {

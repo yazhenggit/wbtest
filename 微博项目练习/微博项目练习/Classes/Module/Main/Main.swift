@@ -16,7 +16,7 @@ class Main: UITabBarController {
         addChildViewControllers()
     }
     func clickComposedButton() {
-        print(__FUNCTION__)
+//        print(__FUNCTION__)
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -63,11 +63,5 @@ class Main: UITabBarController {
       
         return button
     }()
-    
-    
-    
-    
-    
-    
     
 }

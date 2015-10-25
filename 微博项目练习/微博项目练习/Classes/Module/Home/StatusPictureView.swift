@@ -7,7 +7,12 @@
 //
 
 import UIKit
-
+// 选中照片通知
+let HMStatusPictureViewSelectedNotification = "HMStatusPictureViewSelectedNotification"
+/// 选中照片索引
+let HMStatusPictureViewSelectedIndexKey = "HMStatusPictureViewSelectedIndexKey"
+/// 选中照片 URL 数组
+let HMStatusPictureViewSelectedURLsKey = "HMStatusPictureViewSelectedURLsKey"
 // 可重用 cell 标示符
 private let statusPictureViewCellID = "statusPictureViewCellID"
 
@@ -60,6 +65,7 @@ class StatusPictureView: UICollectionView {
         registerClass(StatusPictureViewCell.self, forCellWithReuseIdentifier: statusPictureViewCellID)
         //  设置代理，自己当自己的数据源
         self.dataSource = self
+        self.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -68,14 +74,19 @@ class StatusPictureView: UICollectionView {
 }
 // 在 swift 中，协议同样可以通过 extension 来写，可以将一组协议方法，放置在一起，便于代码维护和阅读！
 
-extension StatusPictureView:UICollectionViewDataSource{
+extension StatusPictureView:UICollectionViewDataSource,UICollectionViewDelegate{
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+            print(indexPath)
+        NSNotificationCenter.defaultCenter().postNotificationName(HMStatusPictureViewSelectedNotification, object: self, userInfo:[HMStatusPictureViewSelectedIndexKey:indexPath,HMStatusPictureViewSelectedURLsKey:status!.picturelargeURLs])
+    }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return status?.pictureURLs?.count ?? 0
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(statusPictureViewCellID, forIndexPath: indexPath) as! StatusPictureViewCell
         
-        cell.imageURL =  status?.pictureURLs![indexPath.item]
+        cell.imageURL =  status!.pictureURLs![indexPath.item]
         
         return cell
     }
@@ -87,6 +98,7 @@ class StatusPictureViewCell: UICollectionViewCell {
     var imageURL: NSURL? {
         didSet {
             iconView.sd_setImageWithURL(imageURL!)
+            gifImageView.hidden = ((imageURL!.absoluteString as NSString).pathExtension.lowercaseString != "gif")
         }
     }
     
@@ -103,10 +115,16 @@ class StatusPictureViewCell: UICollectionViewCell {
     
     private func setupUI() {
         contentView.addSubview(iconView)
+        iconView.addSubview(gifImageView)
         
         iconView.ff_Fill(contentView)
+        gifImageView.ff_AlignInner(type: ff_AlignType.BottomRight, referView: iconView, size: nil)
     }
     
     // MARK: 懒加载控件
     private lazy var iconView: UIImageView = UIImageView()
+    private lazy var gifImageView: UIImageView = {
+         let iv = UIImageView(image: UIImage(named: "timeline_image_gif"))
+        return iv
+    }()
 }

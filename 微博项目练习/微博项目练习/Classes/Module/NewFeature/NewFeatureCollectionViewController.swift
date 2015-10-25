@@ -52,7 +52,7 @@ class NewFeatureCell:UICollectionViewCell{
         didSet {
             iconView.image = UIImage(named: "new_feature_\(imageIndex + 1)")
                         startButton.hidden = true
-            startButtonAnim()
+//            startButtonAnim()
         }
     }
     
